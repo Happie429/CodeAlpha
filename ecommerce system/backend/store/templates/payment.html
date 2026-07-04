@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Payment | SproTech</title>
+
+<link rel="stylesheet" href="{% static 'css/payment.css' %}">
+
+</head>
+
+<body>
+
+<div class="payment-container">
+
+    <h1>💳 Choose Payment Method</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="Cash On Delivery" checked>
+            Cash On Delivery (COD)
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="UPI">
+            UPI
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="Credit Card">
+            Credit / Debit Card
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="Net Banking">
+            Net Banking
+        </label>
+
+        <label class="payment-option">
+            <input type="radio" name="payment" value="Wallet">
+            Wallet
+        </label>
+
+        <div class="buttons">
+
+            <a href="{% url 'delivery' %}" class="back-btn">
+                ⬅ Back
+            </a>
+
+            <a href="/" class="home-btn">
+                🏠 Home
+            </a>
+
+            <button type="submit" class="next-btn">
+                Continue →
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>

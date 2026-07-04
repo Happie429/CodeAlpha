@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            Seller Dashboard
+        </div>
+
+        <div>
+            <a href="{% url 'home' %}" class="nav-link">
+                Home
+            </a>
+
+            <a href="{% url 'add_product' %}" class="add-btn">
+                + Add Product
+            </a>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <h1 class="page-title">
+            My Products
+        </h1>
+
+        {% if products %}
+
+        <div class="product-grid">
+
+            {% for product in products %}
+
+            <div class="product-card">
+
+              <img src="{{ product.image }}" alt="{{ product.name }}">
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        {{ product.name }}
+                    </div>
+
+                    <div class="product-price">
+                        ₹{{ product.price }}
+                    </div>
+
+                    <div class="product-description">
+                        {{ product.description }}
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <div class="empty">
+
+            <h2>No Products Added Yet</h2>
+
+            <p>
+                Start selling by adding your first product.
+            </p>
+
+            <a href="{% url 'add_product' %}" class="add-btn">
+                Add First Product
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>

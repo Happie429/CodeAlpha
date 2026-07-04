@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SproTech Login</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/auth.css' %}">
+</head>
+
+<body>
+<div class="top-navbar">
+
+    <div class="nav-logo">
+    SproTech
+    <span>Smart Shopping</span>
+</div>
+
+    <div class="nav-search">
+
+        <input
+            type="text"
+            placeholder="Search for products, brands and more">
+
+        <button>🔍</button>
+
+    </div>
+
+    <div class="nav-menu">
+
+        <a href="/login/">Login</a>
+
+        <a href="/register/">Signup</a>
+
+    </div>
+
+</div>
+
+<div class="login-container">
+
+    <div class="left-panel">
+
+        <h1>SproTech</h1>
+
+        <h2>Welcome Back!</h2>
+
+        <p>
+            Login to continue shopping with
+            amazing deals and offers.
+        </p>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png"
+             class="login-image">
+
+    </div>
+
+    <div class="right-panel">
+
+        <h2>Login</h2>
+
+        {% if error %}
+            <div class="error-box">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Enter Username"
+                required>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                required>
+
+            <button type="submit">
+                LOGIN
+            </button>
+
+        </form>
+
+        <a href="#" class="forgot">
+            Forgot Password?
+        </a>
+
+        <a href="/register/"
+           class="register-btn">
+
+            Create New Account
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

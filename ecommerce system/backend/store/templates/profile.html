@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile - SproTech </title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/profile.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+    <div class="logo">
+        SproTech
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/cart/">Cart</a>
+
+        <a href="/logout/">Logout</a>
+
+    </div>
+
+</div>
+
+<!-- Profile Section -->
+
+<div class="profile-container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+       <div class="profile-pic">
+
+    {% if profile.profile_image %}
+        <img src="{{ profile.profile_image.url }}" alt="Profile">
+    {% else %}
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Default">
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="file" name="profile_image" id="profile_image">
+
+        <button type="submit">
+            Upload
+        </button>
+
+    </form>
+
+</div>
+
+        <h2>{{ request.user.username }}</h2>
+
+        <p>Premium Member</p>
+
+        <hr>
+<li>
+    <a href="/orders/">📦 My Orders</a>
+</li>        <a href="/cart/">🛒 My Cart</a>
+
+<li>
+    <a href="/wishlist/">❤️ Wishlist</a>
+</li>
+
+<li>
+    <a href="/logout/">🚪 Logout</a>
+</li>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="profile-content">
+
+        <h1>My Profile</h1>
+
+        <div class="info-card">
+
+            <h3>Personal Information</h3>
+
+            <p>
+                <strong>Username:</strong>
+                {{ request.user.username }}
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                {{ request.user.email }}
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                {{ profile.phone }}
+            </p>
+
+            <p>
+                <strong>Address:</strong>
+                {{ profile.address }}
+            </p>
+
+            <button class="edit-btn">
+                Edit Profile
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

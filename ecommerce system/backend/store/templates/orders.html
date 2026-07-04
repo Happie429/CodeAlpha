@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Orders</title>
+    <link rel="stylesheet" href="{% static 'css/orders.css' %}">
+</head>
+
+<body>
+
+<div class="navbar">
+
+<h2>SproTech Orders</h2>
+
+<div>
+    <a href="/">Home</a>
+    <a href="/profile/">Profile</a>
+</div>
+
+</div>
+
+<div class="container">
+
+<h1>📦 My Orders</h1>
+
+{% if orders %}
+
+{% for order in orders %}
+
+<div class="order-card">
+
+<div class="top">
+
+<div>
+<h3>Order #{{ order.id }}</h3>
+<p>{{ order.ordered_on }}</p>
+</div>
+
+<div class="status">
+{{ order.status }}
+</div>
+
+</div>
+
+<hr>
+
+{% for item in order.orderitem_set.all %}
+
+<div class="product">
+
+<img src="{{ item.product.image.url }}">
+
+<div>
+<h2>{{ item.product.name }}</h2>
+<p>Qty : {{ item.quantity }}</p>
+<p>₹{{ item.price }}</p>
+</div>
+
+</div>
+
+{% endfor %}
+
+<div class="total">
+Total ₹{{ order.total_amount }}
+</div>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<div class="empty">
+<h2>No Orders Yet 📦</h2>
+<a href="/">Shop Now</a>
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>

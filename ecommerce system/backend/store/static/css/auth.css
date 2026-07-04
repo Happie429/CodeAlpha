@@ -1,0 +1,363 @@
+/* ===== TOP NAVBAR ===== */
+
+.top-navbar{
+
+    background:#2874f0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 40px;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+height:60px;
+}
+
+.nav-logo{
+
+    color:white;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    font-style:italic;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.nav-logo:hover{
+
+    transform:scale(1.05);
+}
+
+.nav-search{
+
+    width:45%;
+
+    display:flex;
+}
+
+.nav-search input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:4px 0 0 4px;
+}
+
+.nav-search button{
+
+    border:none;
+
+    background:white;
+
+    padding:12px 20px;
+
+    cursor:pointer;
+
+    border-radius:0 4px 4px 0;
+}
+
+.nav-menu{
+
+    display:flex;
+
+    gap:30px;
+}
+
+.nav-menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.nav-menu a:hover{
+
+    color:#ffe500;
+
+    transform:translateY(-2px);
+}
+.nav-logo span{
+
+    display:block;
+
+    font-size:12px;
+
+    color:#ffd700;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+    background:#f1f3f6;
+
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+padding-top:100px;
+
+}
+
+.login-container{
+
+    width:900px;
+    height:550px;
+
+    display:flex;
+
+    background:white;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.2);
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    animation:fadeIn 1s ease;
+}
+
+/* LEFT SIDE */
+
+.left-panel{
+
+    width:40%;
+
+    background:#2874f0;
+
+    color:white;
+
+    padding:50px;
+
+    position:relative;
+}
+
+.left-panel h1{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+    animation:slideLeft 1s ease;
+}
+
+.left-panel h2{
+
+    font-size:32px;
+
+    margin-bottom:15px;
+}
+
+.left-panel p{
+
+    font-size:18px;
+
+    line-height:30px;
+}
+
+.login-image{
+
+    width:220px;
+
+    position:absolute;
+
+    bottom:40px;
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    animation:float 3s infinite;
+}
+
+/* RIGHT SIDE */
+
+.right-panel{
+
+    width:60%;
+
+    padding:60px;
+}
+
+.right-panel h2{
+
+    color:#2874f0;
+
+    margin-bottom:30px;
+}
+
+.right-panel input{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:20px;
+
+    border:none;
+
+    border-bottom:
+        2px solid #ddd;
+
+    font-size:16px;
+}
+
+.right-panel input:focus{
+
+    outline:none;
+
+    border-bottom:
+        2px solid #2874f0;
+}
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    background:#fb641b;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    border-radius:5px;
+
+    transition:0.3s;
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(251,100,27,.3);
+}
+
+.forgot{
+
+    display:block;
+
+    margin-top:20px;
+
+    text-decoration:none;
+
+    color:#2874f0;
+}
+
+.register-btn{
+
+    display:block;
+
+    text-align:center;
+
+    margin-top:30px;
+
+    padding:15px;
+
+    text-decoration:none;
+
+    color:#2874f0;
+
+    border:1px solid #ddd;
+
+    border-radius:5px;
+
+    transition:.3s;
+}
+
+.register-btn:hover{
+
+    background:#2874f0;
+
+    color:white;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes slideLeft{
+
+    from{
+        opacity:0;
+        transform:translateX(-50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@keyframes float{
+
+    0%{
+        transform:
+        translateX(-50%)
+        translateY(0);
+    }
+
+    50%{
+        transform:
+        translateX(-50%)
+        translateY(-15px);
+    }
+
+    100%{
+        transform:
+        translateX(-50%)
+        translateY(0);
+    }
+}

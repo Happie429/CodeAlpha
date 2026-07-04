@@ -1,0 +1,417 @@
+{% load static %}
+{% load custom_filters %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SproTech Store</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="logo">🛍️ SproTech</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Products</a>
+        <a href="/cart/">🛒 Cart</a>
+
+        {% if user.is_authenticated %}
+            <a href="/profile/">👤 {{ user.username }}</a>
+            <a href="/logout/">Logout</a>
+        {% else %}
+            <a href="/login/">Login</a>
+            <a href="/register/">Register</a>
+        {% endif %}
+    </div>
+</nav>
+
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>Discover Amazing Tech Products</h1>
+        <p>Best laptops, phones, cameras & accessories at best prices.</p>
+
+        <a href="#products" class="shop-btn">Shop Now</a>
+    </div>
+</section>
+<section>
+
+    <!-- BACKGROUND IMAGES -->
+     <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Laptop"> 
+
+     <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="Headphones"> 
+
+ <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=800&q=80" alt="DSLR Camera"> 
+  
+   <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Smart Watch"> 
+
+     <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=800&q=80" alt="Earbuds"> 
+
+ <img src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80" alt="Laptop Charger">  
+
+    <img src="https://images.unsplash.com/photo-1609592240990-3c2a2a1b6f70?auto=format&fit=crop&w=800&q=80" alt="Cable"> 
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section class="features">
+
+    <div class="feature-box">🚚 Free Shipping</div>
+    <div class="feature-box">🔒 Secure Payment</div>
+    <div class="feature-box">🛡 Warranty</div>
+    <div class="feature-box">📞 24/7 Support</div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+<section class="categories" id="categories">
+
+    <h2>
+    ALL Categories
+    <button id="viewAllCategories" class="view-btn">
+        View All →
+    </button>
+</h2>
+
+   <div class="category-grid">
+
+    <a href="{% url 'category_products' 'laptop' %}" class="category">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80">
+        <p> Laptop</p>
+    </a>
+
+    <a href="{% url 'category_products' 'phone' %}" class="category">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80">
+        <p>Phone</p>
+    </a>
+<a href="{% url 'category_products' 'camera' %}" class="category">
+    <img src="https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?auto=format&fit=crop&w=800&q=80" alt="Digital Camera">
+    <p>Camera</p>
+</a>
+    <a href="{% url 'category_products' 'watch' %}" class="category">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80">
+        <p>Watch</p>
+    </a>
+<a href="{% url 'category_products' 'earbuds' %}" class="category extra-category">
+    <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=800&q=80">
+    <p> Earbuds</p>
+</a>
+<a href="{% url 'category_products' 'headphones' %}" class="category extra-category">
+    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80">
+    <p> Headphones</p>
+</a>
+<a href="{% url 'category_products' 'speaker' %}" class="category extra-category">
+    <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80">
+    <p>Speaker</p>
+</a>
+<a href="{% url 'category_products' 'keyboard' %}" class="category extra-category">
+    <img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=800&q=80">
+    <p>Keyboard</p>
+</a>
+
+<!-- Mouse -->
+<a href="{% url 'category_products' 'mouse' %}" class="category extra-category">
+    <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=800&q=80">
+    <p>Mouse</p>
+</a>
+<a href="{% url 'category_products' 'monitor' %}" class="category extra-category">
+    <img src="https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?auto=format&fit=crop&w=800&q=80">
+    <p>Monitor</p>
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ================= FEATURED PRODUCTS ================= -->
+<section class="products" id="products">
+
+    <h2 class="section-title">Featured Products</h2>
+
+    <div class="product-container">
+
+{% for product in products %}
+
+<div class="product-card">
+
+    {% if product.image %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    {% endif %}
+
+    <h3>{{ product.name }}</h3>
+
+    <p>{{ product.description }}</p>
+
+    <div class="price">₹{{ product.price }}</div>
+
+    <div class="cart-controls">
+
+        {% if product.id in cart_items %}
+
+            <a href="{% url 'decrease_quantity' product.id %}" class="qty-btn">−</a>
+
+            <span class="qty-number">
+                {{ cart_items|get_item:product.id }}
+            </span>
+
+            <a href="{% url 'increase_quantity' product.id %}" class="qty-btn">+</a>
+
+        {% else %}
+
+            <a href="{% url 'add_to_cart' product.id %}" class="add-btn">
+                    🛒 Add to Cart
+                </a>
+
+            {% endif %}
+
+        </div>
+
+        <!-- Wishlist Button -->
+        <div class="wishlist-box">
+
+            {% if product.id in wishlist_items %}
+
+                <button class="wishlist-added">
+                    ❤️ Added
+                </button>
+
+            {% else %}
+
+                <a href="{% url 'add_wishlist' product.id %}" class="wishlist-link">
+                    🤍 Add to Wishlist
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
+</section>
+
+
+<!-- ================= OFFER BANNER ================= -->
+
+<section class="offer-banner">
+
+    <div class="offer-left">
+
+        <p class="offer-tag">LIMITED TIME OFFER</p>
+
+        <h1 class="offer-title">
+            Summer Sale <br>
+            Up To <span>30% OFF</span>
+        </h1>
+
+        <p class="offer-text">
+            Grab the latest laptops, smartphones, cameras,
+            smart watches, gaming accessories and electronics
+            at unbeatable prices. Limited stock available.
+        </p>
+
+        <a href="#products" class="offer-btn">
+            Shop The Sale →
+        </a>
+
+        <div class="offer-countdown">
+
+            <div class="time-box">
+                <h2>02</h2>
+                <p>Days</p>
+            </div>
+
+            <div class="time-box">
+                <h2>14</h2>
+                <p>Hours</p>
+            </div>
+
+            <div class="time-box">
+                <h2>36</h2>
+                <p>Min</p>
+            </div>
+
+            <div class="time-box">
+                <h2>28</h2>
+                <p>Sec</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="offer-right">
+    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+         alt="Laptop">
+</div>
+</section>
+
+
+<!-- ================= REVIEWS ================= -->
+<section class="reviews">
+
+    <h2>What Customers Say</h2>
+    <p class="reviews-subtitle">
+        Trusted by thousands of happy customers.
+    </p>
+
+    <div class="review-grid">
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                Best website for electronics. Fast delivery!
+            </p>
+
+            <div class="customer">
+
+                <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+                <div class="customer-info">
+                    <h4>Rahul Sharma</h4>
+                    <span>Verified Buyer</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                Quality products and amazing customer support.
+                Highly recommended.
+            </p>
+
+            <div class="customer">
+
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Verma">
+
+                <div class="customer-info">
+                    <h4>Priya Verma</h4>
+                    <span>Regular Customer</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="review">
+
+<div class="stars">
+    &#9733;&#9733;&#9733;&#9733;&#9733;
+</div>
+
+            <p>
+                Affordable prices compared to other websites.
+                Will definitely shop again.
+            </p>
+
+            <div class="customer">
+
+                <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Aman Gupta">
+
+                <div class="customer-info">
+                    <h4>Aman Gupta</h4>
+                    <span>Verified Buyer</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= BRAND LOGOS ================= -->
+<section class="brands">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Xiaomi_logo.svg" alt="Redmi">
+
+<!-- Dell -->
+<img src="https://img.icons8.com/color/48/dell.png" alt="Dell">
+
+<!-- HP -->
+<img src="https://img.icons8.com/color/48/hp.png" alt="HP">
+
+<!-- ASUS -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/ASUS_Logo.svg" alt="ASUS">
+
+<!-- Lenovo -->
+<img src="https://img.icons8.com/color/48/lenovo.png" alt="Lenovo">
+
+<!-- Sony -->
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Sony_logo.svg" alt="Sony">
+
+<!-- Intel -->
+<img src="https://1000logos.net/wp-content/uploads/2017/02/Intel-logo.png" alt="Intel">
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h2>SproTech</h2>
+            <p>Your trusted tech store for laptops, phones, and accessories.</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="/">Home</a>
+            <a href="#products">Products</a>
+            <a href="#categories">Categories</a>
+            <a href="/cart/">Cart</a>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>📍 Greater Noida, India</p>
+            <p>📞 +91 7607368205 </p>
+            <p>✉ support@sprotech.com</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 SproTech | All Rights Reserved
+    </div>
+
+</footer>
+<script>
+document.getElementById("viewAllCategories").addEventListener("click", function(){
+
+    document.querySelectorAll(".extra-category").forEach(function(item){
+        item.style.display="block";
+    });
+
+    this.style.display="none";
+
+});
+</script>
+
+</body>
+</html>

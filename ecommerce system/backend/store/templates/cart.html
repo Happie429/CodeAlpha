@@ -1,0 +1,153 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Shopping Cart | SproTech</title>
+
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+</head>
+
+<body>
+
+    <div class="cart-container">
+
+        <h1 class="cart-title">
+            🛒 My <span>Shopping Cart</span>
+        </h1>
+
+        <a href="/" class="continue-btn">
+            ← Continue Shopping
+        </a>
+
+        <br><br>
+
+        {% if cart_items %}
+
+        <div class="cart-grid">
+
+            <!-- LEFT SIDE -->
+            <div class="cart-items">
+
+                {% for item in cart_items %}
+
+                <div class="cart-card">
+
+                    {% if item.product.image %}
+                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                    {% endif %}
+
+                    <div class="cart-info">
+
+                        <h2>{{ item.product.name }}</h2>
+
+                        <p>{{ item.product.description }}</p>
+
+                        <div class="price">
+                            ₹{{ item.product.price }}
+                        </div>
+
+                        <div class="quantity-box">
+
+                            <a href="{% url 'decrease_quantity' item.id %}" class="qty-btn">
+                                −
+                            </a>
+
+                            <span class="qty-number">
+                                {{ item.quantity }}
+                            </span>
+
+                            <a href="{% url 'increase_quantity' item.id %}" class="qty-btn">
+                                +
+                            </a>
+
+                        </div>
+
+                        <br>
+
+                        <a href="{% url 'remove_cart' item.id %}" class="remove-btn">
+                            🗑 Remove
+                        </a>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="summary">
+
+    <h2>📋 Order Summary</h2>
+
+    <div class="summary-row">
+        <span>Items</span>
+        <span>{{ cart_items|length }}</span>
+    </div>
+
+    <div class="summary-row">
+        <span>Shipping</span>
+        <span>FREE</span>
+    </div>
+
+    <hr>
+
+    <div class="summary-row">
+        <strong>Total Amount</strong>
+        <span class="total">₹{{ total }}</span>
+    </div>
+
+    <!-- Checkout Button -->
+    <a href="{% url 'delivery' %}" class="checkout-btn">
+        Proceed to Checkout →
+    </a>
+
+    <!-- Navigation Buttons -->
+    <div class="cart-buttons">
+
+        <a href="/" class="home-btn">
+            🏠 Home
+        </a>
+
+        <a href="/" class="continue-btn">
+            ← Continue Shopping
+        </a>
+
+    </div>
+
+</div>
+
+
+        {% else %}
+
+        <!-- EMPTY CART -->
+
+        <div class="empty-cart">
+
+            <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png">
+
+            <h2>Your Cart is Empty</h2>
+
+            <p>
+                Looks like you haven't added anything yet.
+            </p>
+
+            <a href="/">
+                Continue Shopping
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
