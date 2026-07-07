@@ -1,12 +1,24 @@
 from django.contrib import admin
-from .models import Product, Profile, Cart, Wishlist, Address, Order, OrderItem
-
+from .models import (
+    Product,
+    Cart,
+    Profile,
+    Wishlist,
+    Address,
+    Order,
+    OrderItem,
+)
 
 admin.site.register(Product)
-admin.site.register(Profile)
 admin.site.register(Cart)
+admin.site.register(Profile)
 admin.site.register(Wishlist)
 admin.site.register(Address)
+
+
+class OrderItemInline(admin.TabularInline):
+    model = OrderItem
+    extra = 0
 
 
 @admin.register(Order)
@@ -14,14 +26,15 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "user",
-        "total_price",
+        "total_amount",
+        "payment_method",
         "status",
-        "created_at",
+        "ordered_on",
     )
 
     list_filter = (
         "status",
-        "created_at",
+        "ordered_on",
     )
 
     search_fields = (
@@ -29,12 +42,4 @@ class OrderAdmin(admin.ModelAdmin):
         "id",
     )
 
-
-@admin.register(OrderItem)
-class OrderItemAdmin(admin.ModelAdmin):
-    list_display = (
-        "order",
-        "product",
-        "quantity",
-        "price",
-    )
+    inlines = [OrderItemInline]

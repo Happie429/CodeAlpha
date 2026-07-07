@@ -245,7 +245,6 @@ def profile(request):
 
 @login_required
 def orders(request):
-
     orders = Order.objects.filter(
         user=request.user
     ).order_by("-ordered_on")
