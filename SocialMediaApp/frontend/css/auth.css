@@ -1,0 +1,286 @@
+/* ==========================
+   Google Font
+========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:100vh;
+
+    background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+
+    overflow:hidden;
+
+}
+
+/* Background Circles */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:50%;
+
+    top:-100px;
+    left:-80px;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    background:rgba(255,255,255,.15);
+
+    border-radius:50%;
+
+    bottom:-70px;
+    right:-70px;
+
+}
+
+/* ==========================
+Container
+========================== */
+
+.container{
+
+    width:400px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    animation:fade .7s;
+
+    z-index:2;
+
+}
+
+/* ==========================
+Logo
+========================== */
+
+.logo{
+
+    text-align:center;
+
+    font-size:38px;
+
+    font-weight:bold;
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+.logo i{
+
+    margin-right:10px;
+
+}
+
+/* ==========================
+Heading
+========================== */
+
+.container h2{
+
+    text-align:center;
+
+    color:white;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================
+Input Group
+========================== */
+
+.input-group{
+
+    margin-bottom:20px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    color:white;
+
+    margin-bottom:8px;
+
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    background:rgba(255,255,255,.25);
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.input-group input::placeholder{
+
+    color:#eee;
+
+}
+
+.input-group input:focus{
+
+    background:rgba(255,255,255,.35);
+
+}
+
+/* ==========================
+Button
+========================== */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:white;
+
+    color:#d62976;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+/* ==========================
+Links
+========================== */
+
+.bottom-text{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.bottom-text a{
+
+    color:#fff;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+.bottom-text a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ==========================
+Animation
+========================== */
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================
+Responsive
+========================== */
+
+@media(max-width:500px){
+
+.container{
+
+width:90%;
+padding:30px 20px;
+
+}
+
+.logo{
+
+font-size:30px;
+
+}
+
+}

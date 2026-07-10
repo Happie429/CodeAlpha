@@ -1,0 +1,1215 @@
+/* ===================================
+   RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#222;
+    overflow-x:hidden;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:70px;
+
+    background:#fff;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 30px;
+
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+    z-index:1000;
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:28px;
+    font-weight:700;
+
+    color:#E1306C;
+}
+
+.logo i{
+
+    font-size:32px;
+}
+
+.search-box{
+
+    width:350px;
+}
+
+.search-box input{
+
+    width:100%;
+
+    padding:12px 18px;
+
+    border:none;
+    outline:none;
+
+    background:#f2f2f2;
+
+    border-radius:30px;
+
+    font-size:15px;
+}
+
+.nav-right{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+#welcomeUser{
+
+    font-weight:600;
+}
+
+#darkBtn{
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    background:#eee;
+
+    transition:.3s;
+}
+
+#darkBtn:hover{
+
+    transform:rotate(180deg);
+}
+
+#logoutBtn{
+
+    padding:10px 22px;
+
+    border:none;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    background:#E1306C;
+
+    transition:.3s;
+}
+
+#logoutBtn:hover{
+
+    background:#c61c59;
+}
+
+/* ===================================
+   MAIN CONTAINER
+=================================== */
+
+.container{
+
+    display:flex;
+
+    margin-top:70px;
+
+    min-height:calc(100vh - 70px);
+}
+
+/* ===================================
+   LEFT SIDEBAR
+=================================== */
+
+.sidebar{
+
+    position:fixed;
+
+    top:70px;
+    left:0;
+
+    width:250px;
+
+    height:calc(100vh - 70px);
+
+    background:#fff;
+
+    padding:20px;
+
+    border-right:1px solid #ddd;
+}
+
+.menu-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:#333;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    margin-bottom:10px;
+
+    transition:.3s;
+}
+
+.menu-item:hover{
+
+    background:#E1306C;
+
+    color:#fff;
+}
+
+.menu-item.active{
+
+    background:#E1306C;
+
+    color:#fff;
+}
+
+/* ===================================
+   MAIN CONTENT
+=================================== */
+
+.main-content{
+
+    flex:1;
+
+    margin-left:270px;
+
+    margin-right:340px;
+
+    padding:25px;
+}
+
+/* ===================================
+   RIGHT SIDEBAR
+=================================== */
+
+.right-sidebar{
+
+    position:fixed;
+
+    right:20px;
+
+    top:90px;
+
+    width:300px;
+}
+/* ===================================
+   STORIES
+=================================== */
+
+.stories{
+
+    display:flex;
+
+    gap:18px;
+
+    overflow-x:auto;
+
+    padding:20px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.stories::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.story{
+
+    min-width:85px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+}
+
+.story img{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    padding:3px;
+
+    border:3px solid #E1306C;
+
+    transition:.3s;
+
+}
+
+.story img:hover{
+
+    transform:scale(1.08);
+
+}
+
+.story p{
+
+    margin-top:8px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+
+/* ===================================
+   CREATE POST
+=================================== */
+
+.create-post{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.create-post h2{
+
+    margin-bottom:15px;
+
+    color:#E1306C;
+
+}
+
+.create-post textarea{
+
+    width:100%;
+
+    min-height:120px;
+
+    resize:none;
+
+    border:1px solid #ddd;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.create-post textarea:focus{
+
+    border-color:#E1306C;
+
+    box-shadow:0 0 10px rgba(225,48,108,.25);
+
+}
+
+
+/* ===================================
+   POST OPTIONS
+=================================== */
+
+.post-options{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:15px;
+
+}
+
+.post-options button{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#f2f2f2;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.post-options button:hover{
+
+    background:#ffe4ef;
+
+}
+
+
+/* ===================================
+   SHARE BUTTON
+=================================== */
+
+.share-btn{
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:linear-gradient(45deg,#833ab4,#fd1d1d,#fcb045);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.share-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
+
+}
+/* ===================================
+   POSTS CONTAINER
+=================================== */
+
+#postsContainer{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+
+/* ===================================
+   POST CARD
+=================================== */
+
+.post{
+
+    width:100%;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+    animation:fade .4s ease;
+
+}
+
+.post:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+/* ===================================
+   POST HEADER
+=================================== */
+
+.post-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px;
+
+}
+
+.post-user{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.avatar{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid #E1306C;
+
+}
+
+.user-info h3{
+
+    font-size:17px;
+
+    margin-bottom:3px;
+
+}
+
+.user-info p{
+
+    color:#888;
+
+    font-size:13px;
+
+}
+
+.more{
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+
+/* ===================================
+   POST IMAGE
+=================================== */
+
+.post-image{
+
+    width:100%;
+
+    max-height:550px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+/* ===================================
+   POST TEXT
+=================================== */
+
+.post-content{
+
+    padding:18px;
+
+    font-size:15px;
+
+    line-height:28px;
+
+    color:#333;
+
+    word-wrap:break-word;
+
+}
+
+
+/* ===================================
+   ACTION BAR
+=================================== */
+
+.post-actions{
+
+    display:flex;
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    border-top:1px solid #eee;
+
+    padding:15px;
+
+}
+
+.action-btn{
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    color:#555;
+
+    transition:.3s;
+
+}
+
+.action-btn:hover{
+
+    transform:scale(1.15);
+
+    color:#E1306C;
+
+}
+
+
+/* ===================================
+   COMMENTS
+=================================== */
+
+.comments-box{
+
+    padding:15px;
+
+    border-top:1px solid #eee;
+
+    background:#fafafa;
+
+}
+
+.single-comment{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    margin-bottom:10px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
+
+}
+
+.single-comment b{
+
+    color:#E1306C;
+
+    display:block;
+
+    margin-bottom:5px;
+
+}
+
+.single-comment p{
+
+    font-size:14px;
+
+    color:#444;
+
+}
+
+
+/* ===================================
+   ANIMATION
+=================================== */
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ===================================
+   RIGHT SIDEBAR
+=================================== */
+
+.right-sidebar{
+
+    width:300px;
+
+    position:fixed;
+
+    top:90px;
+
+    right:20px;
+
+}
+
+
+/* ===================================
+   PROFILE CARD
+=================================== */
+
+.profile-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    margin-bottom:20px;
+
+}
+
+.profile-card img{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #E1306C;
+
+    margin-bottom:15px;
+
+}
+
+.profile-card h2{
+
+    font-size:22px;
+
+    margin-bottom:5px;
+
+    color:#222;
+
+}
+
+.profile-card h4{
+
+    color:#777;
+
+    font-size:15px;
+
+    margin-bottom:12px;
+
+}
+
+.profile-card p{
+
+    color:#666;
+
+    font-size:14px;
+
+    line-height:22px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* ===================================
+   PROFILE STATS
+=================================== */
+
+.profile-stats{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+}
+
+.profile-stats div{
+
+    flex:1;
+
+    background:#fafafa;
+
+    border-radius:12px;
+
+    padding:12px;
+
+}
+
+.profile-stats h3{
+
+    color:#E1306C;
+
+    font-size:22px;
+
+    margin-bottom:5px;
+
+}
+
+.profile-stats span{
+
+    color:#666;
+
+    font-size:13px;
+
+}
+
+
+/* ===================================
+   SUGGESTED USERS
+=================================== */
+
+.suggested-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.suggested-card h3{
+
+    margin-bottom:18px;
+
+    color:#E1306C;
+
+}
+
+
+/* ===================================
+   SINGLE SUGGESTION
+=================================== */
+
+.suggestion{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:18px;
+
+}
+
+.suggestion img{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.suggestion div{
+
+    flex:1;
+
+}
+
+.suggestion b{
+
+    display:block;
+
+    font-size:15px;
+
+}
+
+.suggestion p{
+
+    color:#777;
+
+    font-size:13px;
+
+}
+
+.suggestion button{
+
+    border:none;
+
+    background:#0095f6;
+
+    color:#fff;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.suggestion button:hover{
+
+    background:#0077cc;
+
+}
+/* ===================================
+   DARK MODE
+=================================== */
+
+body.dark{
+
+    background:#121212;
+
+    color:#fff;
+
+}
+
+body.dark .navbar,
+body.dark .sidebar,
+body.dark .create-post,
+body.dark .post,
+body.dark .profile-card,
+body.dark .suggested-card,
+body.dark .stories{
+
+    background:#1e1e1e;
+
+    color:#fff;
+
+}
+
+body.dark .menu-item{
+
+    color:#ddd;
+
+}
+
+body.dark .menu-item:hover,
+body.dark .menu-item.active{
+
+    background:#E1306C;
+
+    color:#fff;
+
+}
+
+body.dark textarea{
+
+    background:#2b2b2b;
+
+    color:#fff;
+
+    border:1px solid #444;
+
+}
+
+body.dark textarea::placeholder{
+
+    color:#aaa;
+
+}
+
+body.dark .search-box input{
+
+    background:#2b2b2b;
+
+    color:#fff;
+
+}
+
+body.dark .action-btn{
+
+    color:#ddd;
+
+}
+
+body.dark .action-btn:hover{
+
+    color:#ff4d88;
+
+}
+
+body.dark .single-comment{
+
+    background:#2a2a2a;
+
+}
+
+body.dark .comments-box{
+
+    background:#202020;
+
+}
+
+
+/* ===================================
+   SCROLLBAR
+=================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#E1306C;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eee;
+
+}
+
+
+/* ===================================
+   TRANSITIONS
+=================================== */
+
+*{
+
+    transition:.3s;
+
+}
+
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+
+@media(max-width:1200px){
+
+.right-sidebar{
+
+    display:none;
+
+}
+
+.main-content{
+
+    margin-right:20px;
+
+}
+
+}
+
+
+@media(max-width:900px){
+
+.sidebar{
+
+    display:none;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    margin-right:0;
+
+    width:100%;
+
+    padding:15px;
+
+}
+
+.search-box{
+
+    display:none;
+
+}
+
+.navbar{
+
+    padding:0 15px;
+
+}
+
+.logo{
+
+    font-size:24px;
+
+}
+
+}
+
+
+@media(max-width:600px){
+
+.nav-right span{
+
+    display:none;
+
+}
+
+#logoutBtn{
+
+    display:none;
+
+}
+
+.story{
+
+    min-width:70px;
+
+}
+
+.story img{
+
+    width:60px;
+
+    height:60px;
+
+}
+
+.create-post{
+
+    padding:15px;
+
+}
+
+.post{
+
+    border-radius:12px;
+
+}
+
+.profile-card{
+
+    padding:18px;
+
+}
+
+}
+
+
+/* ===================================
+   HOVER EFFECTS
+=================================== */
+
+.post:hover{
+
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+}
+
+.profile-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.suggestion:hover{
+
+    background:#fafafa;
+
+    border-radius:12px;
+
+    padding:8px;
+
+}
+
+.story img:hover{
+
+    transform:scale(1.1);
+
+}
+
+.share-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.menu-item:hover{
+
+    transform:translateX(6px);
+
+}

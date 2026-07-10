@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profile | Ime </title>
+
+    <link rel="stylesheet" href="css/profile.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+    <span id="welcomeUser"></span>
+
+
+    <div class="profile-container">
+
+        <!-- Cover -->
+        <div class="cover"></div>
+
+        <!-- Profile -->
+         <h2 id="profileName"></h2>
+        <div class="profile-header">
+
+            <div class="image-section">
+
+                <!-- Profile Image -->
+                <img
+                    id="profilePreview"
+                    
+
+                    src="https://i.pravatar.cc/200"
+                    alt="Profile">
+
+                <!-- Hidden File Input -->
+                <input
+                    type="file"
+                    id="profileInput"
+                    accept="image/*"
+                    hidden>
+
+                <!-- Change Photo -->
+                <button id="changePhotoBtn">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Change Photo
+
+                </button>
+
+            </div>
+
+            <div class="profile-info">
+
+                <h1 id="userName">
+                    Loading...
+                </h1>
+
+                <h3 id="userUsername">
+                    @username
+                </h3>
+                <p id="profileBio"></p>
+
+                <p id="userBio">
+                    No Bio
+                </p>
+
+                <div class="stats">
+
+                    <div>
+                        <h2 id="postsCount">0</h2>
+                        <span>Posts</span>
+                    </div>
+
+                    <div>
+                        <h2 id="followersCount">0</h2>
+                        <span>Followers</span>
+                    </div>
+
+                    <div>
+                        <h2 id="followingCount">0</h2>
+                        <span>Following</span>
+                    </div>
+
+                </div>
+
+                <!-- Edit Button -->
+              <button id="editProfileBtn">
+    <i class="fa-solid fa-pen"></i>
+    Edit Profile
+</button>
+
+            </div>
+
+        </div>
+
+        <!-- Posts -->
+
+        <div class="posts-section">
+
+            <h2>My Posts</h2>
+
+            <div
+                id="postsGrid"
+                class="posts-grid">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>

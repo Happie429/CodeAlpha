@@ -1,0 +1,279 @@
+<!-- ================= NAVBAR ================= -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ime Social Media</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+<nav class="navbar">
+
+    <div class="logo">
+        <i class="fa-brands fa-instagram"></i>
+        <span>Ime</span>
+    </div>
+
+    <div class="search-box">
+        <input
+            type="text"
+            placeholder="Search users...">
+    </div>
+
+    <div class="nav-right">
+
+        <button id="darkBtn">🌙</button>
+
+        <span id="welcomeUser">
+            Loading...
+        </span>
+
+        <button id="logoutBtn">
+            Logout
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= MAIN CONTAINER ================= -->
+
+<div class="container">
+
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <a href="index.html" class="menu-item active">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="profile.html" class="menu-item">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </a>
+
+        <a href="messages.html" class="menu-item">
+            <i class="fa-solid fa-message"></i>
+            <span>Messages</span>
+        </a>
+
+        <a href="notifications.html" class="menu-item">
+            <i class="fa-solid fa-bell"></i>
+            <span>Notifications</span>
+        </a>
+
+        <a href="saved.html" class="menu-item">
+            <i class="fa-solid fa-bookmark"></i>
+            <span>Saved</span>
+        </a>
+
+        <a href="settings.html" class="menu-item">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+        <a href="#" id="logoutSide" class="menu-item">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+
+    </aside>
+
+
+    <!-- ================= CENTER CONTENT ================= -->
+
+    <main class="main-content">
+        <!-- ================= STORIES ================= -->
+
+<div class="stories">
+
+    <div class="story">
+        <img src="https://i.pravatar.cc/100?img=1" alt="">
+        <p>You</p>
+    </div>
+
+    <div class="story">
+        <img src="https://i.pravatar.cc/100?img=2" alt="">
+        <p>Rahul</p>
+    </div>
+
+    <div class="story">
+        <img src="https://i.pravatar.cc/100?img=3" alt="">
+        <p>Priya</p>
+    </div>
+
+    <div class="story">
+        <img src="https://i.pravatar.cc/100?img=4" alt="">
+        <p>Aman</p>
+    </div>
+
+    <div class="story">
+        <img src="https://i.pravatar.cc/100?img=5" alt="">
+        <p>Neha</p>
+    </div>
+
+    <div class="story">
+        <img src="https://i.pravatar.cc/100?img=6" alt="">
+        <p>Rohit</p>
+    </div>
+
+</div>
+
+
+<!-- ================= CREATE POST ================= -->
+
+<div class="create-post">
+
+    <h2>Create Post</h2>
+
+    <form id="postForm">
+
+        <textarea
+            id="caption"
+            placeholder="What's on your mind?"
+            required></textarea>
+
+        <div class="post-options">
+
+            <button type="button">
+                📷 Photo
+            </button>
+
+            <button type="button">
+                😊 Feeling
+            </button>
+
+            <button type="button">
+                📍 Location
+            </button>
+
+        </div>
+
+        <button
+            type="submit"
+            class="share-btn">
+            Share Post
+        </button>
+
+    </form>
+
+</div>
+
+
+<!-- ================= POSTS ================= -->
+
+<div id="postsContainer">
+
+    <!-- JavaScript will load posts here -->
+
+</div>
+<!-- ================= RIGHT SIDEBAR ================= -->
+
+
+<!-- ================= RIGHT SIDEBAR ================= -->
+<aside class="right-sidebar">
+
+    <div class="profile-card">
+
+        <img
+            id="profilePic"
+            src="https://i.pravatar.cc/150"
+            alt="Profile">
+
+        <h2 id="profileName">Loading...</h2>
+
+        <h4 id="profileUsername">@username</h4>
+
+        <p id="profileBio">
+            No Bio Available
+        </p>
+
+        <div class="profile-stats">
+
+            <div>
+                <h3 id="homePosts">0</h3>
+                <span>Posts</span>
+            </div>
+
+            <div>
+                <h3 id="homeFollowers">0</h3>
+                <span>Followers</span>
+            </div>
+
+            <div>
+                <h3 id="homeFollowing">0</h3>
+                <span>Following</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="suggested-card">
+
+        <h3>Suggested Users</h3>
+
+        <div class="suggestion">
+            <img src="https://i.pravatar.cc/50?img=15" alt="">
+            <div>
+                <b>Rahul</b>
+                <p>@rahul</p>
+            </div>
+            <button>Follow</button>
+        </div>
+
+        <div class="suggestion">
+            <img src="https://i.pravatar.cc/50?img=16" alt="">
+            <div>
+                <b>Priya</b>
+                <p>@priya</p>
+            </div>
+            <button>Follow</button>
+        </div>
+
+        <div class="suggestion">
+            <img src="https://i.pravatar.cc/50?img=17" alt="">
+            <div>
+                <b>Aman</b>
+                <p>@aman</p>
+            </div>
+            <button>Follow</button>
+        </div>
+
+    </div>
+
+</aside>
+</div>
+<!-- ================= END CONTAINER ================= -->
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/index.js"></script>
+
+</body>
+</html>
